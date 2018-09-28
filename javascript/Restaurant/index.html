@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>ZemosoRestaurant</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="mycontent-left">
+                <h3> Tables</h3>
+
+                <input type="text" id="tableSearch" onkeyup="tableFilter()"placeholder="search for tables" class="form-control">
+                <ul id="tableUl"class="list-unstyled">
+                    <li>
+                        <br>
+                        <div class="card"  data-toggle="modal" data-target="#myModal">
+                            <div class="card-header">
+                                              Table-2
+
+                            </div>
+                            <div class="card-body" id="droptarget1" ondrop="drop(event)" ondragover="allowDrop(event)" onclick="tableDisplay(event,'one')"
+                            >Rs. <p style="display: inline;">0 </p> | Total items: <p style="display: inline;">0</p>
+                        </div>
+                        </div>
+                        <br>
+
+                    </li>
+                    <li>
+                        <div class="card" data-toggle="modal" data-target="#myModal">
+                            <div class="card-header">
+                                Table-1
+                            </div>
+                            <div class="card-body" id="droptarget2" ondrop="drop(event)" ondragover="allowDrop(event)" onclick="tableDisplay(event,'two')"
+                            >Rs.
+                            <p style="display: inline;">0 </p> | Total items: <p style="display: inline;">0</p>
+                        </div>
+                        </div>
+                        <br>
+                    </li>
+                    <li>
+                            <div class="card " data-toggle="modal" data-target="#myModal">
+                                    <div class="card-header" >Table-3</div>
+                                    <div class="card-body" id="droptarget3" ondrop="drop(event)" ondragover="allowDrop(event)" onclick="tableDisplay(event,'three')">
+                                        Rs. <p style="display: inline;">0 </p> | Total items: <p style="display: inline;">0</p>
+                                    </div>
+                        </div>
+                        <br>
+                    </li>
+                </ul>
+                 </div>
+                 <div class="modal fade" id="myModal" style="width: 70%">
+                        <div class="modal-dialog modal-md  modal-ku" >
+                          <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">Order Details</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                    <div id="tableHeader">
+                                            <h3> Order Details</h3>
+                                    </div>
+                              <div id="myTable" class="row">
+
+
+                              </div>
+                            </div>
+                            <div id="Total">
+                                Total : <span id="total"></span>
+                            </div>
+
+                                <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Generate bill</button>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+            </div>
+            <div class="col-8">
+                  <h3>Menu</h3>
+                  <input type="text" onkeyup="menuFilter()" placeholder="serch menu by course, food etc..." class="form-control" id="menuSearch" >
+
+                        <ul  id="menuUl" class="list-unstyled">
+                                <li>
+                                    <br>
+                                    <div class="card"  ondragstart="dragStart(event)" id="dragtarget1" draggable="true" >
+                                        <div class="card-header" >
+                                            <p >Chicken Biryani</p></div>
+                                        <div class="card-body">Rs. <p style="display: inline;">510</p> </div>
+                                    </div>
+                                    <br>
+
+                                </li>
+                                <li>
+                                        <div class="card " ondragstart="dragStart(event)" id="dragtarget2" draggable="true">
+                                                <div class="card-header"><p>Egg Biryani</p></div>
+                                                <div class="card-body">Rs.<p style="display: inline;"> 250</p></div>
+                                        </div>
+                                        <br>
+                                </li>
+                                <li>
+                                        <div class="card " ondragstart="dragStart(event)" id="dragtarget3" draggable="true">
+                                                <div class="card-header"><p>Veg.Biryani</p></div>
+                                                <div class="card-body">Rs. <p style="display: inline;">200</p></div>
+                                    </div>
+                                    <br>
+                                </li>
+                            </ul>
+
+                </div>
+
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
